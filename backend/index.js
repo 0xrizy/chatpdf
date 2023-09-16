@@ -18,8 +18,8 @@ app.post('/openai', async (req, res) => {
     const completion = await openai.chat.completions.create({
       messages: [
         { role: 'system', content: 'You are a helpful assistant that answers questions.' },
-        { role: 'user', content: `Take this as reference - ${textContent}` },
-        { role: 'user', content: userMessage },
+        { role: 'user', content: `These are the contents of the pdf which was uploaded by the user,take this as reference   -   ${textContent}` },
+        { role: 'user', content: `Answer the following question based on the reference provided earlier - ${userMessage}` },
       ],
       model: 'gpt-3.5-turbo',
     });
